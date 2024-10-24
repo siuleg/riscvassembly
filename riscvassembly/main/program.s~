@@ -1,0 +1,186 @@
+	# Put your program into this file
+	#
+	# The "program" is a function that takes
+	# no arguments and that does not return
+	# anything.
+	#
+	# The program function does not need to
+	# return. It may be a forever loop.
+	# If the program function returns,
+	# it gets called again.
+	#
+	# Do not change the attributes of the
+	# program function below.
+	#
+	# You may "declare" other functions
+	# using the pattern stubbed out for
+	# you below.
+	#
+	# You need to follow the ESP Risc-V ABI:
+	#
+	# * The Stack Pointer is in register sp.
+	#   Every function needs to move the stack
+	#   pointer up (to lower addresses) in the
+	#   beginning of the function and move it
+	#   down in the end. The move needs to make
+	#   room for all temporary variables the function
+	#   needs. The stack pointer may only be moved
+	#   in multiples of 32 bytes for alignment purposes.
+	# 
+	# * The return address is put into register
+	#   ra by the branch-and-link instruction call.
+	#   The callee function needs to start by storing
+	#   the return address on the stack and end by
+	#   restoring the return address from the stack.
+	#   The place needed to store the return address
+	#   on the stack needs to be accounted for
+	#   when moving the stack pointer.
+	#
+	# * A function returns by executing a relative jump
+	#   instruction jr on the return address:
+	#
+	#   jr		ra
+	#
+	# * In addition to the stack pointer, every function
+	#   needs to maintain the frame pointer. The frame pointer
+	#   sits in register s0. It is equal to the stack pointer
+	#   of the calling function. See below for an example on
+	#   how to maintain the frame pointer. The frame pointer
+	#   gets saved on the stack, then set to the stack pointer
+	#   of the calling function and finally retrieved from
+	#   the stack again. The place needed to store the
+	#   frame pointer needs to be accounted for when moving the
+	#   stack pointer.
+	#   
+	# * When calling a function, the first arguments of the
+	#   function are passed in registers a0 through a7. All
+	#   other arguments are passed on the stack. That latter
+	#   case is rare. Each register is 32 bit wide; 64 bit
+	#   values are passed in even-odd register pairs. The even
+	#   register contains the least significant bits (as Risc-V
+	#   is little endian).
+	#
+	# * The value returned by a function is passed in register
+	#   a0 when it is up to 32 bit wide. 64 bit return values
+	#   use the even-odd register pair a0-a1.
+	#
+	# * Register x0 always contains the value 0.
+	#
+	# * A callee function can use the registers a0 through a7
+	#   as temporaries, after having saved them on the stack
+	#   if they are arguments that are still needed. None of
+	#   the registers a0 through a7 are callee-saved though. This
+	#   means a caller function cannot assume to find the
+	#   same contents in these registers once a function it
+	#   called returns.
+	#
+	# * A callee function can also use the temporary registers
+	#   t0 through t6. They are caller-saved as well. This means
+	#   that the calling function cannot assume to find
+	#   the same contents in these registers once a function
+	#   it called returns.
+	#
+	# * Students should not use the registers gp, tp, s0 (the
+	#   frame pointer, other than saving it and restoring it),
+	#   s1 and s2 through s11.
+	#
+	# * Besides register x0, which always contains the value 0,
+	#   students should not use any register with name x<n>, like
+	#   x1, x17 etc.
+	#
+	# * Not all Risc-V processors have floating-point units and
+	#   floating-point instructions. Students should not use
+	#   any floating-point registers and floating-point instructions.
+	#
+	# * Not all Risc-V processors have multiplication and division
+	#   units. Students should not use any multiplication or
+	#   division instructions.
+	#
+	# The following functions can be called for (very basic)
+	# input and output on the UART simulated over USB:
+	#
+	# * The function
+	#
+	#   unsigned char get_character();
+	#
+	#   takes no arguments and returns one byte containing
+	#   an ASCII character typed in by the user.
+	#
+	#   The function returns the byte in register a0, which
+	#   is a 32 bit register. Only the 8 least significant
+	#   bits of that byte are meaningful. The upper 24 bits
+	#   can contain any value.
+	#
+	#   The function can be called with
+	#
+	#   call	get_character
+	#
+	# * The function
+	#
+	#   void put_character(unsigned char);
+	#
+	#   takes one byte in argument and returns nothing.
+	#   It outputs the byte as an ASCII character on the screen.
+	#
+	#   The argument of the function is passed to put_character()
+	#   in the lower 8 bits of register a0. The upper 24 bits of
+	#   register a0 must be zero.
+	#
+	# * The two functions get_character() and put_character()
+	#   of course abide by the ABI described above.
+	#
+	# The ESP32-C3 has no full operating system. Only one program
+	# can run at the time. Nothing can be typed in or output if
+	# a program does not call get_character() or put_character()
+	# sufficiently often. On a full-grown computer with a real
+	# operating system, this is different: the operating system can
+	# still get user input and refresh the screen with output
+	# while a program is computing.
+	#
+	# In order to avoid any issue with programs that get "stuck"
+	# (in a long computation or just a buggy forever loop), the ESP32
+	# hardware implements a watch-dog. This is special hardware that
+	# reboots the microcontroller if none of the two functions
+	# get_character() and put_character() has been called for 8 seconds.
+	#
+	# Students are advised to check for loops that run for too long
+	# when they see their device rebooting without a warning.
+	# 
+	# 
+	# 
+	.option nopic
+	.attribute arch, "rv32i2p0_m2p0_a2p0_f2p0_d2p0_c2p0"
+	.attribute unaligned_access, 0
+	.attribute stack_align, 16
+	.text
+	.align	1
+	.globl	program
+	.type	program, @function
+program:
+	addi	sp,sp,-32	# Move stack pointer
+	sw	ra,28(sp)
+	sw	s0,24(sp)
+	addi	s0,sp,32
+
+	# Your code goes here
+	
+	lw	ra,28(sp)
+	lw	s0,24(sp)
+	addi	sp,sp,32
+	jr	ra
+	.size	program, .-program
+
+
+increment:
+	addi	sp,sp,-32
+	sw	ra,28(sp)
+	sw	s0,24(sp)
+	addi	s0,sp,32
+	addi	a0,a0,1
+	lw	ra,28(sp)
+	lw	s0,24(sp)
+	addi	sp,sp,32
+	jr	ra
+	.size	increment, .-increment
+
+	

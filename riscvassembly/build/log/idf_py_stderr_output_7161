@@ -1,0 +1,123 @@
+[0;33m--- esp-idf-monitor 1.5.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- Stack dump detected[0m
+[0;33m--- 0x42008dba: program at /home/siuleg/esp/riscvassembly/main/program.s:254
+0x42008db8: app_main at /home/siuleg/esp/riscvassembly/main/main.c:28
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/siuleg/esp/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x42008dba: program at /home/siuleg/esp/riscvassembly/main/program.s:254
+0x42008db8: app_main at /home/siuleg/esp/riscvassembly/main/main.c:28
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/siuleg/esp/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x42008dbe: program at /home/siuleg/esp/riscvassembly/main/program.s:256
+0x42008db8: app_main at /home/siuleg/esp/riscvassembly/main/main.c:28
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/siuleg/esp/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x42008dc2: program at /home/siuleg/esp/riscvassembly/main/program.s:261
+0x42008db8: app_main at /home/siuleg/esp/riscvassembly/main/main.c:28
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/siuleg/esp/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x42008dc6: program at /home/siuleg/esp/riscvassembly/main/program.s:263
+0x42008db8: app_main at /home/siuleg/esp/riscvassembly/main/main.c:28
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/siuleg/esp/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x42008db8: app_main at /home/siuleg/esp/riscvassembly/main/main.c:28
+0x42008db8: app_main at /home/siuleg/esp/riscvassembly/main/main.c:28
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/siuleg/esp/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x42008dba: program at /home/siuleg/esp/riscvassembly/main/program.s:254
+0x42008db8: app_main at /home/siuleg/esp/riscvassembly/main/main.c:28
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/siuleg/esp/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x42008dbe: program at /home/siuleg/esp/riscvassembly/main/program.s:256
+0x42008db8: app_main at /home/siuleg/esp/riscvassembly/main/main.c:28
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/siuleg/esp/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x42008dc2: program at /home/siuleg/esp/riscvassembly/main/program.s:261
+0x42008db8: app_main at /home/siuleg/esp/riscvassembly/main/main.c:28
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/siuleg/esp/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x42008dc6: program at /home/siuleg/esp/riscvassembly/main/program.s:263
+0x42008db8: app_main at /home/siuleg/esp/riscvassembly/main/main.c:28
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/siuleg/esp/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x42008db8: app_main at /home/siuleg/esp/riscvassembly/main/main.c:28
+0x42008db8: app_main at /home/siuleg/esp/riscvassembly/main/main.c:28
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/siuleg/esp/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x42008dba: program at /home/siuleg/esp/riscvassembly/main/program.s:254
+0x42008db8: app_main at /home/siuleg/esp/riscvassembly/main/main.c:28
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/siuleg/esp/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x42008dbe: program at /home/siuleg/esp/riscvassembly/main/program.s:256
+0x42008db8: app_main at /home/siuleg/esp/riscvassembly/main/main.c:28
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/siuleg/esp/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x42008dc2: program at /home/siuleg/esp/riscvassembly/main/program.s:261
+0x42008db8: app_main at /home/siuleg/esp/riscvassembly/main/main.c:28
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/siuleg/esp/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x42008dc6: program at /home/siuleg/esp/riscvassembly/main/program.s:263
+0x42008db8: app_main at /home/siuleg/esp/riscvassembly/main/main.c:28
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/siuleg/esp/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x42008db8: app_main at /home/siuleg/esp/riscvassembly/main/main.c:28
+0x42008db8: app_main at /home/siuleg/esp/riscvassembly/main/main.c:28
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/siuleg/esp/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x42008dba: program at /home/siuleg/esp/riscvassembly/main/program.s:254
+0x42008db8: app_main at /home/siuleg/esp/riscvassembly/main/main.c:28
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/siuleg/esp/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0m
